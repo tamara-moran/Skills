@@ -1,0 +1,7 @@
+div#demo{
+
+    color:red;
+}
+:host{
+    background-color: aqua;
+}
