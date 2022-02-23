@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input} from "@angular/core";
 
 declare const getnRandomNumbers:any;
 
@@ -13,14 +13,13 @@ declare const getnRandomNumbers:any;
 
                 <li *ngFor="let emp of employees">
                 {{emp.name}}
-                </li>--> 
-
-                <h2>Listado</h2>
-                <div *ngFor="let x of rNum | 
-                paginate: {itemsPerPage:itemsToDisplay, currentPage:page} ">
+                </li> 
+                <div *ngFor="let x of rNum >
                 {{x}}
-                <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
-                </div>
+                
+                </div>-->
+                <h2>Listado</h2>
+                {{p_title}}
                 `,
     styles:[ 'div {font-weight:bolder; color:darkgreen;}']            
 })
@@ -42,7 +41,7 @@ export class ProductComponent{
             id:234,
             deparment:"RRHH"
             },
-    ];*/
+    ];
 
     rNum = <[]>getnRandomNumbers();
     page: Number = 1;
@@ -51,7 +50,6 @@ export class ProductComponent{
    
     pageChanged(event:any){
         this.page = event;
-    }
-
-
+    }*/
+        @Input() p_title:string | undefined;
 }    

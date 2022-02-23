@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsFeatureModule } from './products-feature/products-feature.module';
-import { NgxPaginationModule } from 'ngx-pagination';
 import { ProductComponent } from './products/product.component';
 @NgModule({
   declarations: [
@@ -13,8 +12,7 @@ import { ProductComponent } from './products/product.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProductsFeatureModule,
-    NgxPaginationModule
+    ProductsFeatureModule
   ],
   providers: [],
   bootstrap: [AppComponent]
