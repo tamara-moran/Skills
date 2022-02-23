@@ -482,7 +482,7 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<app-product [p_title]="title"></app-product>
+<app-product (c_newProductEvent)="p_addProduct($event)"></app-product>
 
 
 

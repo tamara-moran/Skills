@@ -1,4 +1,4 @@
-import { Component, Input} from "@angular/core";
+import { Component, Output, EventEmitter} from "@angular/core";
 
 declare const getnRandomNumbers:any;
 
@@ -17,9 +17,14 @@ declare const getnRandomNumbers:any;
                 <div *ngFor="let x of rNum >
                 {{x}}
                 
-                </div>-->
+                </div>
+                
+                {{p_title}}-->
+
                 <h2>Listado</h2>
-                {{p_title}}
+                <label>add a new product
+                <input #newProduct></label>    
+                <button (Click) = "addProduct(newProduct.value)"></button>
                 `,
     styles:[ 'div {font-weight:bolder; color:darkgreen;}']            
 })
@@ -50,6 +55,13 @@ export class ProductComponent{
    
     pageChanged(event:any){
         this.page = event;
-    }*/
-        @Input() p_title:string | undefined;
-}    
+    }
+        @Input() p_title:string | undefined;*/
+        
+        @Output() c_newProductEvent = new EventEmitter<string>();
+        addProduct(value:string){
+           this.c_newProductEvent.emit(value);
+
+        }
+}     
+        
