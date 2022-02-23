@@ -19,12 +19,12 @@ declare const getnRandomNumbers:any;
                 
                 </div>
                 
-                {{p_title}}-->
+                {{p_title}}
 
                 <h2>Listado</h2>
                 <label>add a new product
                 <input #newProduct></label>    
-                <button (Click) = "addProduct(newProduct.value)"></button>
+                <button (Click) = "addProduct(newProduct.value)"></button>-->
                 `,
     styles:[ 'div {font-weight:bolder; color:darkgreen;}']            
 })
@@ -56,12 +56,18 @@ export class ProductComponent{
     pageChanged(event:any){
         this.page = event;
     }
-        @Input() p_title:string | undefined;*/
+        @Input() p_title:string | undefined;
         
         @Output() c_newProductEvent = new EventEmitter<string>();
         addProduct(value:string){
            this.c_newProductEvent.emit(value);
 
-        }
+        }*/
+    
+    inStock:number = 10;
+    childMethod(){
+        console.log("A method in the product component - the child");
+    }    
+        
 }     
         

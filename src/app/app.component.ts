@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ProductComponent } from './products/product.component';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Skills';
-  p_addProduct(newProduct:string){
-    console.log(newProduct);
+  quantity:number=0;
+  @ViewChild(ProductComponent)
+  product: ProductComponent = new ProductComponent;
+
+  ngAfterViewInit(){
+    this.product.childMethod();
+    this.quantity=this.product.inStock;
+    console.log(this.quantity);
   }
+  
 }
